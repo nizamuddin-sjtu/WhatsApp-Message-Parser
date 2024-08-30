@@ -31,7 +31,7 @@ Usage
 
     bash
 
-git clone https://github.com/your-username/whatsapp-message-parser.git
+git clone https://github.com/nizamuddin-sjtu/whatsapp-message-parser.git
 
 Install Dependencies: Make sure you have Python installed, then install the required libraries:
 
