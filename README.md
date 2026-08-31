@@ -1,55 +1,86 @@
-# WhatsApp-Message-Parser
-This repository contains a Python application for cleaning and detecting the language of WhatsApp messages. The application uses a graphical user interface (GUI) built with Tkinter, integrating various text processing techniques to clean and analyze messages.
-Features
+<h1 align="center">WhatsApp Message Parser</h1>
 
-    Text Cleaning:
-        Removes URLs and emojis from messages.
-        Converts text to lowercase and removes punctuation for consistent processing.
+<p align="center">
+  <a href="whatsappMessagesParser.py"><img src="https://img.shields.io/badge/Project-whatsappMessagesParser.py-555555.svg" alt="Project entry file"></a>
+  <a href="https://scholar.google.com/citations?user=bvyKhaEAAAAJ&hl=en"><img src="https://img.shields.io/badge/Publications-Google_Scholar-4285F4.svg" alt="Google Scholar"></a>
+  <a href="https://www.kaggle.com/nizamuddinmaitlo"><img src="https://img.shields.io/badge/Profile-Kaggle-20BEFF.svg" alt="Kaggle profile"></a>
+</p>
 
-    Language Detection:
-        Utilizes langid to classify the language of each cleaned message.
+<p align="center"><b>Repository maintained by Nizamuddin Maitlo</b></p>
 
-    User Interface:
-        Provides a GUI for users to paste WhatsApp messages, process them, and view the cleaned and language-detected results.
+<p align="center">A local Tkinter utility for cleaning pasted messages and identifying their language.</p>
 
-Components
+## 🔥 Overview
 
-    Text Cleaning:
-        URL Removal: Strips out URLs from messages.
-        Emoji Removal: Filters out emojis using a regular expression pattern.
-        Lowercasing and Punctuation Removal: Converts text to lowercase and removes non-alphanumeric characters.
+This lightweight desktop application accepts pasted message text, removes URLs, emojis, and punctuation, normalizes case, and labels each cleaned line with a language code using `langid`.
 
-    Language Detection:
-        Uses the langid library to detect the language of the cleaned message.
+## ✨ Features
 
-    GUI:
-        Built with Tkinter, the application allows users to input messages, process them, and view results in a new window.
+- Tkinter desktop interface.
+- URL, emoji, punctuation, and case normalization.
+- Per-line language identification.
+- Immediate display of cleaned text and detected language codes.
 
-Usage
+## 🧪 Method and protocol
 
-    Clone the Repository:
+- Input is pasted into the local text box.
+- Each line is cleaned independently.
+- Language identification uses the locally installed `langid` model.
+- The current script displays results without writing them to disk.
 
-    bash
+## 📁 Repository contents
 
-git clone https://github.com/nizamuddin-sjtu/whatsapp-message-parser.git
+| File | Purpose |
+|---|---|
+| `whatsappMessagesParser.py` | GUI, text cleaning, language detection, and result display |
 
-Install Dependencies: Make sure you have Python installed, then install the required libraries:
+## 🛠️ Setup
 
-bash
+Install the Python dependencies:
 
-pip install googletrans==4.0.0-rc1 langid
+~~~bash
+python -m pip install langid googletrans
+~~~
 
-Run the Application: Navigate to the project directory and run the application:
+Tkinter is bundled with many Python installations; some Linux distributions require a separate Python Tk package.
 
-bash
+## 📦 Data and inputs
 
-python app.py
+| Resource | Purpose | Availability |
+|---|---|---|
+| Pasted message text | Input cleaned and classified by language | User-provided input |
 
-Input Messages:
+No external dataset is required, and the current script does not save pasted messages to a repository file.
 
-    Paste WhatsApp messages into the text box.
-    Click "Process Messages" to clean and detect the language of the messages.
+## 🚀 Running the project
 
-View Results:
+Launch the desktop application:
 
-    Results will be displayed in a new window, showing the detected language and cleaned message.
+~~~bash
+python whatsappMessagesParser.py
+~~~
+
+## ♻️ Reproducibility
+
+- Record the Python and library versions used for each run.
+- Keep preprocessing, splits, thresholds, and random seeds fixed when comparing results.
+- Do not commit private input data, generated model weights, or machine-specific paths.
+- Revalidate results when the dataset, sensor, operating environment, or dependency versions change.
+
+## 📚 Publications
+
+No paper-specific DOI is currently associated with this repository. This section is intentionally kept separate from related publications to avoid implying a publication-to-code relationship that has not been established.
+
+
+
+## ⚠️ Scope and limitations
+
+Regular-expression emoji removal is not exhaustive, and short or code-switched messages can be difficult to classify reliably. Review cleaned output before using it for analysis or downstream automation.
+
+## 📄 License
+
+No standalone license file is currently included in this repository.
+
+## 🤝 Acknowledgements
+
+This project uses open-source Python libraries and the data or inputs described above. We thank the original dataset, framework, and software contributors.
